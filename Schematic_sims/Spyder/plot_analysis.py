@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 
 # Napięcie Vin vs Vcol
 
-df = pd.read_csv('C:/Users/sikor/Desktop/Transistor_transient.csv')
+df = pd.read_csv('C:/Users/sikor/Desktop/Praktyka/Schematic_sims/Spyder/Transistor_transient.csv')
+
 
 df = df.rename(columns={
     'X--Trace 1::[transient: TIME]': 'Time',
@@ -11,6 +12,9 @@ df = df.rename(columns={
     'Y--Trace 2::[V_Base: V(4)]':    'V_base',
     'Y--Trace 3::[V_Col: V(3)]':     'V_col'
     })
+
+
+print(df)
 
 plt.figure(figsize=(6,4))
 plt.plot(df['V_in'], df['V_col'],
